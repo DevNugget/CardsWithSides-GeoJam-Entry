@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Resources/Reference.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+hand_slot_1 = NodePath("Hand/CardOnePos")
+hand_slot_2 = NodePath("Hand/CardTwoPos")
+hand_slot_3 = NodePath("Hand/CardThreePos")

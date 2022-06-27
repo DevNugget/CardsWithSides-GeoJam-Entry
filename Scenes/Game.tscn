@@ -1,0 +1,449 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Sprites/BlankCard.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=2]
+[ext_resource path="res://Resources/Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Sprites/EmptySpace.png" type="Texture" id=4]
+[ext_resource path="res://Sounds/84322__splashdust__flipcard-[AudioTrimmer.com].wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/MenuMusic.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Scripts/Loop.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/Wall.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/BackDropShadow.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/BladesGrass.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/HeartSprite.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Blood.tscn" type="PackedScene" id=12]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.368627, 0.192157, 0.356863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.54902, 0.247059, 0.364706, 1 )
+
+[sub_resource type="Animation" id=6]
+resource_name = "CardsFallIn"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("../EmptyCard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 40, -21 ), Vector2( 40, 80 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../EmptyCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 0.9 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 40, -21 ), Vector2( 40, 80 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../EmptyCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6, 1 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Vector2( 40, -21 ), Vector2( 40, 80 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("../BlipSound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("../BlipSound")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.65, 0.85 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../EmptyCard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 40, -21 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../EmptyCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 40, -21 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../EmptyCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 40, -21 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 105, 59 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Shake"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( -0.5, -2, 1, -2, 1, 0.5 ),
+"update": 0,
+"values": [ Vector2( 105, 59 ), Vector2( 107, 59 ), Vector2( 105, 59 ), Vector2( 105, 62 ), Vector2( 103, 59 ), Vector2( 105, 59 ) ]
+}
+
+[sub_resource type="Environment" id=5]
+background_mode = 4
+glow_bloom = 0.01
+glow_blend_mode = 0
+glow_hdr_threshold = 0.73
+glow_hdr_luminance_cap = 7.07
+glow_hdr_scale = 1.05
+glow_bicubic_upscale = true
+
+[sub_resource type="Animation" id=11]
+resource_name = "Dead"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3, 2 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "FadeIn"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "FadeOut"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Bricks" type="Sprite" parent="."]
+position = Vector2( 80, 40 )
+texture = ExtResource( 8 )
+
+[node name="Bricks2" type="Sprite" parent="."]
+position = Vector2( 101, 34 )
+texture = ExtResource( 8 )
+
+[node name="Bricks3" type="Sprite" parent="."]
+position = Vector2( 136, 48 )
+texture = ExtResource( 8 )
+
+[node name="Bricks4" type="Sprite" parent="."]
+position = Vector2( 106, 40 )
+texture = ExtResource( 9 )
+
+[node name="Bricks5" type="Sprite" parent="."]
+position = Vector2( 96, 40 )
+texture = ExtResource( 9 )
+
+[node name="Bricks6" type="Sprite" parent="."]
+position = Vector2( 124, 48 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="Heart" type="Sprite" parent="."]
+position = Vector2( 148, 109 )
+texture = ExtResource( 11 )
+
+[node name="BladesGrass" type="Sprite" parent="."]
+position = Vector2( 72, 56 )
+texture = ExtResource( 10 )
+
+[node name="BladesGrass2" type="Sprite" parent="."]
+position = Vector2( 104, 72 )
+texture = ExtResource( 10 )
+
+[node name="BladesGrass3" type="Sprite" parent="."]
+position = Vector2( 138, 58 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="BladesGrass4" type="Sprite" parent="."]
+position = Vector2( 168, 40 )
+texture = ExtResource( 10 )
+
+[node name="Hand" type="Node2D" parent="."]
+
+[node name="CardOnePos" type="Position2D" parent="Hand"]
+position = Vector2( 76, 101 )
+
+[node name="Sprite" type="Sprite" parent="Hand/CardOnePos"]
+texture = ExtResource( 4 )
+
+[node name="CardTwoPos" type="Position2D" parent="Hand"]
+position = Vector2( 102, 101 )
+
+[node name="Sprite" type="Sprite" parent="Hand/CardTwoPos"]
+texture = ExtResource( 4 )
+
+[node name="CardThreePos" type="Position2D" parent="Hand"]
+position = Vector2( 128, 101 )
+
+[node name="Sprite" type="Sprite" parent="Hand/CardThreePos"]
+texture = ExtResource( 4 )
+
+[node name="Draw" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 104.0
+margin_right = 56.0
+margin_bottom = 117.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "draw"
+
+[node name="EmptyCard" type="Sprite" parent="."]
+position = Vector2( 40, -21 )
+texture = ExtResource( 1 )
+
+[node name="EmptyCard2" type="Sprite" parent="."]
+position = Vector2( 40, -21 )
+texture = ExtResource( 1 )
+
+[node name="EmptyCard3" type="Sprite" parent="."]
+position = Vector2( 40, -21 )
+texture = ExtResource( 1 )
+
+[node name="DeckSprite" type="Sprite" parent="."]
+position = Vector2( 40, 80 )
+texture = ExtResource( 1 )
+
+[node name="DeckLabel" type="RichTextLabel" parent="DeckSprite"]
+margin_left = -5.0
+margin_top = -11.0
+margin_right = 35.0
+margin_bottom = 29.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_colors/default_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "DECK"
+
+[node name="CardCount" type="RichTextLabel" parent="DeckSprite"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 18.0
+margin_bottom = 23.0
+mouse_filter = 2
+custom_colors/default_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "x00"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeckSprite"]
+playback_speed = 0.6
+anims/CardsFallIn = SubResource( 6 )
+anims/RESET = SubResource( 7 )
+
+[node name="BossPos" type="Position2D" parent="."]
+position = Vector2( 104, 40 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 105, 59 )
+current = true
+
+[node name="ScreenShake" type="AnimationPlayer" parent="Camera2D"]
+root_node = NodePath("../..")
+playback_speed = 2.0
+anims/RESET = SubResource( 3 )
+anims/Shake = SubResource( 4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
+
+[node name="HealthDisplay" type="RichTextLabel" parent="."]
+margin_left = 156.0
+margin_top = 100.0
+margin_right = 216.0
+margin_bottom = 118.0
+custom_fonts/normal_font = ExtResource( 3 )
+text = "00"
+
+[node name="TurnDisplay" type="RichTextLabel" parent="."]
+margin_left = 142.0
+margin_top = 93.0
+margin_right = 242.0
+margin_bottom = 111.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_colors/default_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "Current turn: You"
+
+[node name="BlipSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 2.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 64.0
+margin_top = 69.0
+margin_right = 140.0
+margin_bottom = 83.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -16.0
+autoplay = true
+script = ExtResource( 7 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Overlay" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.152941, 0.152941, 0.211765, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Overlay"]
+autoplay = "FadeOut"
+anims/Dead = SubResource( 11 )
+anims/FadeIn = SubResource( 10 )
+anims/FadeOut = SubResource( 8 )
+anims/RESET = SubResource( 9 )
+
+[node name="Blood" parent="." instance=ExtResource( 12 )]
+
+[node name="DeadCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Score" type="RichTextLabel" parent="."]
+margin_left = 5.0
+margin_right = 69.0
+margin_bottom = 16.0
+custom_colors/default_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+custom_fonts/normal_font = ExtResource( 3 )
+text = "Score: 0"
+
+[connection signal="on_redraw_requested" from="." to="." method="_on_Game_on_redraw_requested"]
+[connection signal="pressed" from="Draw" to="." method="_on_Draw_pressed"]
+[connection signal="animation_finished" from="DeckSprite/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="animation_finished" from="CanvasLayer/Overlay/AnimationPlayer" to="." method="_on_AnimationPlayerPog_animation_finished"]
+[connection signal="timeout" from="DeadCooldown" to="." method="_on_DeadCooldown_timeout"]

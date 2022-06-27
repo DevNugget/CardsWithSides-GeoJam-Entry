@@ -1,0 +1,340 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Resources/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/HealthCard.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Knight.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/BlankCard.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Loop.gd" type="Script" id=6]
+[ext_resource path="res://Sounds/Nugget (3).mp3" type="AudioStream" id=7]
+[ext_resource path="res://Sounds/571185__user391915396__menuselect4.wav" type="AudioStream" id=8]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Bob"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("BlankCard:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Vector2( 131, 74 ), Vector2( 131, 78 ), Vector2( 131, 74 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlankCard2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Vector2( 160, 69 ), Vector2( 160, 76 ), Vector2( 160, 69 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BlankCard3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.7 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Vector2( 176, 82 ), Vector2( 176, 78 ), Vector2( 176, 82 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BlankCard4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( -2, -2, -2 ),
+"update": 0,
+"values": [ Vector2( 173, 36 ), Vector2( 171, 39 ), Vector2( 173, 36 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("BlankCard:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 131, 74 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("BlankCard2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 160, 69 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("BlankCard3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 176, 82 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("BlankCard4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 173, 36 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Ready"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.243137, 0.137255, 0.278431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.368627, 0.192157, 0.356863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.243137, 0.137255, 0.278431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.368627, 0.192157, 0.356863, 1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -4.0, -28.66 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Overlay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -4.0 ]
+}
+
+[node name="MainMenu" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="BlankCard4" type="Sprite" parent="."]
+position = Vector2( 173, 36 )
+rotation = -0.197473
+texture = ExtResource( 4 )
+
+[node name="Title" type="RichTextLabel" parent="."]
+margin_left = 99.0
+margin_top = 24.0
+margin_right = 177.0
+margin_bottom = 41.0
+rect_scale = Vector2( 1.5, 1.5 )
+custom_colors/default_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "CARDS WITH SIDES"
+
+[node name="Title2" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_right = 80.0
+margin_bottom = 17.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/default_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Game by DevNugget"
+
+[node name="Title3" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_top = 8.0
+margin_right = 99.0
+margin_bottom = 25.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/default_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Music by TheCaptainMoo"
+
+[node name="HighScore" type="RichTextLabel" parent="."]
+margin_left = 2.0
+margin_top = 107.0
+margin_right = 259.0
+margin_bottom = 124.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/default_color = Color( 0.94902, 0.65098, 0.368627, 1 )
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Personal high score: "
+
+[node name="BlankCard" type="Sprite" parent="."]
+position = Vector2( 131, 74 )
+rotation = 0.211089
+texture = ExtResource( 4 )
+
+[node name="BlankCard3" type="Sprite" parent="."]
+modulate = Color( 0.847059, 0.745098, 0.890196, 1 )
+position = Vector2( 176, 82 )
+rotation = -0.082811
+texture = ExtResource( 2 )
+
+[node name="BlankCard2" type="Sprite" parent="."]
+position = Vector2( 160, 69 )
+rotation = 0.211089
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Ready"
+playback_speed = 0.3
+anims/Bob = SubResource( 3 )
+anims/RESET = SubResource( 1 )
+anims/Ready = SubResource( 2 )
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 47.0
+margin_top = 45.0
+margin_right = 78.0
+margin_bottom = 65.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 33.0
+margin_top = 68.0
+margin_right = 93.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 9 )
+custom_styles/normal = SubResource( 9 )
+text = "HOW TO PLAY"
+
+[node name="Overlay" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.152941, 0.152941, 0.211765, 1 )
+
+[node name="Anim" type="AnimationPlayer" parent="Overlay"]
+root_node = NodePath("../..")
+anims/FadeOut = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -4.0
+autoplay = true
+script = ExtResource( 6 )
+
+[node name="Blip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -5.0
+pitch_scale = 0.6
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="animation_finished" from="Overlay/Anim" to="." method="_on_Anim_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/NextButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/unknown (16).png" type="Texture" id=3]
+[ext_resource path="res://Scripts/H2P3.gd" type="Script" id=4]
+
+[node name="H2P3" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Unknown(16)" type="Sprite" parent="."]
+position = Vector2( 27, 36 )
+scale = Vector2( 0.324, 0.302956 )
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 51.0
+margin_top = 8.0
+margin_right = 188.0
+margin_bottom = 48.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]When you hover over a card
+These two buttons will appear"
+text = "When you hover over a card
+These two buttons will appear"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 51.0
+margin_top = 29.0
+margin_right = 188.0
+margin_bottom = 69.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]White button will USE the card
+and do what it is meant to do"
+text = "White button will USE the card
+and do what it is meant to do"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 51.0
+margin_top = 49.0
+margin_right = 238.0
+margin_bottom = 94.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]Green button will turn the card around, and will have a different effect
+"
+text = "Green button will turn the card around, and will have a different effect
+"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 47.0
+margin_top = 67.0
+margin_right = 234.0
+margin_bottom = 112.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]So you have to pick a side
+"
+text = "So you have to pick a side
+"
+
+[node name="Button" parent="." instance=ExtResource( 2 )]
+text = "FINISH"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

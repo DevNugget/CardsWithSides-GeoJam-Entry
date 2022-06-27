@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Resources/Font.tres" type="DynamicFont" id=1]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.243137, 0.137255, 0.278431, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.368627, 0.192157, 0.356863, 1 )
+
+[node name="Button" type="Button"]
+margin_left = 180.0
+margin_top = 5.0
+margin_right = 210.0
+margin_bottom = 24.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "NEXT"

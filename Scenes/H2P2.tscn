@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Resources/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/unknown (15).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/FairyCard.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/NextButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/H2P2.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Blip.tscn" type="PackedScene" id=6]
+
+[node name="H2P2" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="Unknown(15)" type="Sprite" parent="."]
+position = Vector2( 25, 22 )
+scale = Vector2( 0.335165, 0.323529 )
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 40.0
+margin_top = 14.0
+margin_right = 175.0
+margin_bottom = 54.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]Press to draw 3 cards"
+text = "Press to draw 3 cards"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 42.0
+margin_top = 76.0
+margin_right = 182.0
+margin_bottom = 116.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]Cards with gold borders are buffs"
+text = "Cards with gold borders are buffs"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+margin_left = 42.0
+margin_top = 83.0
+margin_right = 182.0
+margin_bottom = 123.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]Their effect will take place for more than one turn after using"
+text = "Their effect will take place for more than one turn after using"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 40.0
+margin_top = 27.0
+margin_right = 203.0
+margin_bottom = 67.0
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]NOTE: You can only draw after using/discarding all cards in your hand"
+text = "NOTE: You can only draw after using/discarding all cards in your hand"
+
+[node name="FairyCard" type="Sprite" parent="."]
+position = Vector2( 27, 90 )
+texture = ExtResource( 3 )
+
+[node name="Button" parent="." instance=ExtResource( 4 )]
+
+[node name="Blip" parent="." instance=ExtResource( 6 )]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="finished" from="Blip" to="." method="_on_Blip_finished"]

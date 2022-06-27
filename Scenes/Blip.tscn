@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sounds/571185__user391915396__menuselect4.wav" type="AudioStream" id=1]
+
+[node name="Blip" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -5.0
+pitch_scale = 0.8

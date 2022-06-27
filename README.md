@@ -5,10 +5,10 @@
 You are given a deck of cards, each card has two sides, pick a side according to the situation and strategize. Defeat as much enemies as possible and try beating your high score!     
         
 ## DEV INFO    
-This game was made by [DevNugget](https://youtube.com/devnugget), and the music was made by CaptainMoo.      
+This game was made by [DevNugget](https://youtube.com/devnugget), and the music was made by [Captain Moo](https://www.youtube.com/c/TheCaptainMoo/videos).      
       
-Idea brain storming was done with my friend RexPlayz (link II)       
- 
+Idea brain storming was done with my friend [RexPlayz](https://www.youtube.com/c/RexPlayz) ([link II](https://www.youtube.com/channel/UC1xvaholyjseL4ClAYOdSAw))       
+     
 ## DEV NOTE     
 ##The high score saving system only works on downloaded builds of the game!     
       

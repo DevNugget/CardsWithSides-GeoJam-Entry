@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Nugget.mp3-ce3145d9d2accc7ead4ef32ee6c1802c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Nugget.mp3"
+dest_files=[ "res://.import/Nugget.mp3-ce3145d9d2accc7ead4ef32ee6c1802c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

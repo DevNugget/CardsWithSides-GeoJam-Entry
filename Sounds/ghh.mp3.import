@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ghh.mp3-d83b0523d9066f6de656456ddd1133cc.mp3str"
+
+[deps]
+
+source_file="res://Sounds/ghh.mp3"
+dest_files=[ "res://.import/ghh.mp3-d83b0523d9066f6de656456ddd1133cc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

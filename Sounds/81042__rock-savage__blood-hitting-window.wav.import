@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/81042__rock-savage__blood-hitting-window.wav-6e96173963a4f2a306f1169b0271203d.sample"
+
+[deps]
+
+source_file="res://Sounds/81042__rock-savage__blood-hitting-window.wav"
+dest_files=[ "res://.import/81042__rock-savage__blood-hitting-window.wav-6e96173963a4f2a306f1169b0271203d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

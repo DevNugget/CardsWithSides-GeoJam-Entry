@@ -2,7 +2,7 @@
 # This game was made for GeoJam.     
 ![New Project (29)](https://user-images.githubusercontent.com/84568105/175940733-9c864270-09c7-4975-9022-1ca4c8f8eb17.png)   
 ## ABOUT GAME     
-[ITCH.IO PAGE](https://devnugget.itch.io/cards-with-sides)       
+Check out the [ITCH.IO PAGE](https://devnugget.itch.io/cards-with-sides)       
 You are given a deck of cards, each card has two sides, pick a side according to the situation and strategize. Defeat as much enemies as possible and try beating your high score!     
         
 ## DEV INFO    
